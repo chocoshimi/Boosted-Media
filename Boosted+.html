@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/druk-trial');  
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background: black;
+            height: 500vh;
+        }
+        .plus-nav{
+            width: 100vw;
+            position: fixed;
+            z-index: 10000;
+            background: linear-gradient(to top, transparent, black);
+        }
+        .plus-nav a{
+            transition: color 500ms ease;
+        }
+        .plus-nav a:hover{
+            color: #00ccbd;
+        }
+        .hero-wrapper{
+            background: linear-gradient(to top, black, transparent);
+        }
+        .hero-background{
+            animation: plus-pan 1.5s linear infinite;
+            background: linear-gradient(
+                to right,
+                    #00ccbd,
+                    #00a397,
+                    #99ebe5,
+                    #00ccbd
+            );
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: -1;
+            top: -400px;
+            left: 0;
+            opacity: 0.5;
+        }
+        @keyframes plus-pan {
+            from{
+                background-position: 0% center;
+            }
+            to{
+                background-position: -200% center;
+            }
+        }
+        .pricing-cards{
+            width: 300px;
+            height: 75%;
+            background: white;
+            border-radius: 10px;
+        }
+        .pricing-annually{
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 0px 0px 10;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="plus-nav flex justify-between px-[50px] py-[15px] items-center text-white">
+        <a href="index.html" class="text-[20px]"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="profile-page.html" class="text-[13px] flex gap-[5px] items-center"><i class="fa-solid fa-user"></i>Thura</a>
+    </div>
+    <!-- hero-section -->
+    <div class="hero-wrapper flex space-between items-center gap-[100px] overflow-hidden relative text-white px-[50px] w-[100vw] h-[100vh] flex items-center">
+            <div class="hero-header text-[80px] text-slate-500 font-semibold leading-none">
+                <h1>Stay Even</h1>
+                <h1>More <span class="text-white">Boosted!</span></h1>
+            </div>
+            <div class="hero-description text-slate-500 text-[13px] flex flex-col gap-[15px]">
+                <p><span class="text-white font-semibold">Boosted+</span> is the new way to enjoy automotive contents with the upcoming <span class="text-white">Boosted community updates</span>, Boosted has never been this much Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente quasi voluptatum ipsam accusamus doloremque, ullam asperiores odit vel, eos illum, deserunt provident harum. Magnam natus facilis placeat ab doloremque blanditiis?</p>
+                <p><span class="text-white">Blogs</span>, dolor sit amet consectetur <span class="text-white">adding friends</span>. Quae ullam sunt nam. Nobis odit dolorem laborum dicta, praesentium modi illo reprehenderit quasi magni quisquam corrupti dolor dignissimos veritatis quis architecto maiores, porro, nesciunt saepe? Ipsum iusto pariatur eos temporibus velit ipsa  nulla doloribus aspernatur, veritatis laudantium culpa quam consectetur! Lorem ipsum dolor sit <span class="text-white">answering questions</span> amet consectetur, adipisicing elit. Nesciunt, voluptatibus!</p>
+                <a href="#" class="text-[#00ccbd]">Learn More <i class="fa-solid fa-chevron-down"></i></a>
+            </div>
+            <div class="hero-background absolute font-bold text-[500px]">
+                <h1>BOOS</h1>
+                <h1>TED+</h1>
+            </div>
+    </div>
+    <!-- pricing section -->
+    <div class="pricing relative h-[100vh] flex px-[50px] space-between gap-[300px] mt-[100px]">
+        <div class="pricing-cards pricing-monthly"></div>
+            <div class="pricing-cards absolute pricing-annually"></div>
+        <div class="pricing-cards pricing-enterprise"></div>
+    </div>
+</body>
+</html>

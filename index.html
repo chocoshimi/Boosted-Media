@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boosted Media</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="imgs/Boosted New Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script>
+        module.exports = {
+    content: [],
+    theme: {
+        backgroundSize: {
+            '100%': '100%',
+            '16': '4rem',
+        },
+        // extend: {},
+    },
+        plugins: [],xs
+    }
+    </script>
+    <!-- css -->
+    <style>
+        /* heading size: 50px 
+        bodytext size: 15px
+        bodytext color: text-slate-500 */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/druk-trial');        
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background-color: black;
+            overflow-x: hidden;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        :root{
+            --primary-color: #00ccbd;
+        }
+        .navbar{
+            background: linear-gradient(to top, transparent, black);
+        }
+        .nav-links ul li a{
+            transition: all 0.5s ease;
+        }
+        .nav-links ul li a::before{
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: var(--primary-color);
+            position: absolute;
+            top: 100%;
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+            transform-origin: right;
+            /* display: none; */
+        }
+        .nav-links ul li a:hover:before{
+            transform: scaleX(1);
+        }
+        .nav-links ul li a:hover{
+            color: var(--primary-color);
+        }
+        .nav-socials ul li a i{
+            transform-origin: center;
+            transition: all 400ms ease;
+        }
+        .nav-socials ul li a i:hover{
+            transform: scale(1.1);
+            color: var(--primary-color);
+        }
+        .boosted-plus a:first-child{
+            transition: color 0.3s ease;
+        }
+        .boosted-plus a:first-child:hover{
+            color: var(--primary-color);
+        }
+        .hero-section{
+            background-image: url(imgs/A225155_large.jpeg);
+            background-size: 120%;
+            background-position: top -120px right -235px;
+        }
+        .hero-section::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(to bottom, transparent 0%, black 99%);
+            opacity: 95%;
+        }
+        .scroll-down{
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: transparent;
+            width: 23px;
+            height: 35px;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+        }
+        .scroll-ball{
+            position: absolute;
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            width: 5px;
+            height: 10px;
+            border-radius: 10px;
+            /* animation: scroll-ball 2s ease infinite; */
+        }
+        .scroll-angle{
+            color: var(--primary-color);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-angle 1s ease infinite;
+        }
+        @keyframes scroll-ball {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+                transform: translate(-50%,25px);
+            }
+        }
+        @keyframes scroll-angle {
+            0%{
+                transform: translate(-50%,0px);
+            }
+            50%{
+                transform: translate(-50%,5px);
+            }
+            100%{
+                transform: translate(-50%,0px);
+            }
+        }
+        .content-section div .content-motto::after{
+            content: "CONTENTS";
+            font-weight: bold;
+            color: black;
+            text-shadow: 0px 0px 1px white;
+            font-size: 60px;
+            position: absolute;
+            z-index: -1;
+            top: -35px;
+            left: 0px;
+            opacity: 60%;
+            transition: all 1s ease;
+            transition-delay: 250ms;
+        }
+        .content-section:hover .content-motto::after{
+            color: var(--primary-color);
+            text-shadow: 0px 0px 30px var(--primary-color);
+            opacity: 100%;
+            transform: scale(1.1);
+            transform-origin: left;
+        }
+        .our-team div .team-motto::after{
+            content: "OUR TEAM";
+            font-weight: bold;
+            color: black;
+            text-shadow: 0px 0px 1px white;
+            font-size: 60px;
+            position: absolute;
+            z-index: -1;
+            top: -35px;
+            left: 0px;
+            opacity: 60%;
+            transition: all 1s ease;
+            background-repeat: no-repeat;
+        }
+        .our-team:hover div p::after{
+            color: var(--primary-color);
+            text-shadow: 0px 0px 30px var(--primary-color);
+            opacity: 100%;
+            transform: scale(1.1);
+            transform-origin: left;
+        }
+        .contact-section div .contact-motto::after{
+            content: "CONTACT";
+            font-weight: bold;
+            color: black;
+            text-shadow: 0px 0px 1px white;
+            font-size: 60px;
+            position: absolute;
+            z-index: -1;
+            top: -35px;
+            left: 0px;
+            opacity: 60%;
+            transition: all 1s ease;
+            background-repeat: no-repeat;
+        }
+        .contact-section div p:hover::after{
+            color: var(--primary-color);
+            text-shadow: 0px 0px 30px var(--primary-color);
+            opacity: 100%;
+            transform: scale(1.1);
+            transform-origin: left;
+        }
+        .content-link-items{
+            width: 350px;
+            height: 500px;
+            border-radius: 10px;
+        }
+        .content-link-items img{
+            width: 350px;
+            height: 350px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            /* box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.2); */
+            transition: all 0.5s ease;
+        }
+        .content-links-elements:hover{
+            transform: scale(0.8);
+            opacity: 1;
+        }
+        .content-link-items a:hover +img{
+            transform: scale(0.95);
+            filter: blur(2px); 
+            box-shadow: 0px 0px 500px rgb(0, 204, 190,0.5);
+        }
+
+        /* .content-link-items img:hover{
+            box-shadow: 0px 0px 300px rgb(0, 204, 189, 0.4);
+        } */
+        .content-link-items span{
+            color: black;
+            background-color: var(--primary-color);
+            padding: 2px;
+
+        }
+        .line{
+            width: 50px;
+            height: 1px;
+            background-color: rgb(100 116 139);
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .category-tags{
+            font-family: 'Druk Text Wide Trial', sans-serif;
+            margin-top: 5px;
+            font-weight: bold;
+            color: white;
+            font-size: 10px;
+            line-height: 0.8;
+            /* background-color: var(--primary-color); */
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .content-bg-circle{
+            top: 400px;
+            left: -40%;
+            z-index: 1;
+            filter: blur(300px);
+        }
+        .content-links-elements{
+            background-color: transparent;
+            width: 350px;
+            height: 350px;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+        .content-links-elements p,
+        .content-links-elements i{
+            font-size: 20px;
+        }
+        .more-contents{
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            max-width: max-content;
+            margin-inline: auto;
+            transition: all 0.5s ease;
+        }
+        .more-contents:hover{
+            transform: translate(-50%,-3px);
+            color: black;
+            background-color: var(--primary-color);
+        }
+        .swiper{
+            width: 100%;
+            height: 100%;
+        }
+        .arkar a{
+            transition: all 0.5s ease;
+        }
+        .arkar a:hover{
+            color: #00ccbd;
+        }
+        .swiper-buttons-nx{
+            color: var(--primary-color);
+            font-size: 50px;
+            width: 100px;
+            height: 100px;
+            top: 300px;
+            right: 70px;
+            color: white;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 50;
+            transition: all 0.2s ease;
+        }
+        .swiper-btn{
+            cursor: pointer;
+        }
+        .swiper-buttons-nx i{
+            transition: all 0.2s ease;
+        }
+        .swiper-buttons-nx:hover{
+            background-color: var(--primary-color);
+        }
+        .swiper-buttons-nx:hover i{
+            color: black;
+        }
+        .swiper-buttons-prv{
+            color: var(--primary-color);
+            font-size: 50px;
+            width: 100px;
+            height: 100px;
+            top: 300px;
+            right: 180px;
+            color: white;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 50;
+            transition: all 0.2s ease;
+        }
+        .swiper-buttons-prv i{
+            transition: all 0.2s ease;
+        }
+        .swiper-buttons-prv:hover{
+            background-color: var(--primary-color);
+        }
+        .swiper-buttons-prv:hover i{
+            color: black;
+        }
+        .contact-links a{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary-color);
+            margin-top: 15px;
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            padding: 5px 10px;
+            transition: all 0.5s ease;
+        }
+        .contact-links a:hover{
+            color: black;
+            background-color: var(--primary-color);
+        }
+        .footer-links ul li{
+            transition: all 0.3s ease;
+        }
+        .footer-links ul li:hover{
+            transform: translateY(-3px);
+        }
+        .footer-socials{
+            font-size: 20px;
+            position: absolute;
+            right: 100px;
+        }
+        .made-with-love{
+            /* opacity: 50%; */
+            /* font-weight: bold; */
+            color: var(--primary-color);
+            background-color: black;
+            padding: 5px 10px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .team-circle{
+            width: 350px;
+            height: 350px;
+            background-color: var(--primary-color);
+            bottom: 50px;
+            right: -20%;
+            z-index: 1;
+            filter: blur(300px)
+        }
+        .hid{
+            opacity: 0;
+            transition: all 2s;
+        }
+        .shw{
+            opacity: 1;
+            transition: all 2s;
+        }
+        .hero-section > .hid{
+            transform: translateY(-10px);
+            transition-delay: 300ms;
+        }
+        .hero-section > .shw{
+            transform: translateY(0px);
+        }
+        .content-section > .hid{
+            transform: translateX(-100px);
+        }
+        .content-section > .shw{
+            transform: translateX(0px);
+        }
+        .content-section .hid:nth-child(3){
+            transform: translateX(100vh);
+        }
+        .content-section .shw:nth-child(3){
+            transform: translateX(0px);
+        }
+        /* .hid-delay{
+            transition-delay: 300ms;
+        } */
+        @media(prefers-reduced-motion){
+            .hid{
+                transition: none;
+            }
+        }
+        .achieve-section{
+            position: relative;
+            /* margin-top: px; */
+            background-color: black;
+            background-image: url(car\ interiors/Audi.jpeg);
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+        .achieve-section::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(black, rgb(0, 0, 0,0.5), black);
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+        .achieve-section .hid{
+            transform: translateY(80px);
+        }
+        .achieve-section .shw{
+            transform: translateY(0px);
+        }
+        .our-team-motto .hid,
+        .content-description .hid{
+            transform: translateX(-100px);
+        }
+        .our-team-motto .shw,
+        .content-description .shw{
+            transform: translateX(0px);
+        }
+        .strengthen{
+            animation: strengthen-pan 1.5s linear infinite;
+            background: linear-gradient(
+                to right,
+                    #00ccbd,
+                    #00a397,
+                    #99ebe5,
+                    #00ccbd
+            );
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @keyframes strengthen-pan {
+            from{
+                background-position: 0% center;
+            }
+            to{
+                background-position: -200% center;
+            }
+        }
+        .contact-buttons a{
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .contact-buttons a:hover{
+            transform: translateY(-5px);
+            background-color: var(--primary-color);
+            color: black;
+        }
+        /* .contact-buttons:hover ~ .blob{
+            scale: 0.0001;
+            /* transform: translate(-50%,50%); */
+        .contact-section .blob{
+            transform-origin: 0% 0%;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(
+                to right,
+                #00ccbd,
+                #0075CC,
+                #00CC57
+            );
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 1;
+            filter: blur(100px);
+            /* transition: opacity 500ms linear, scale 0.5s ease;
+            transform: translate(-50%,-50%); */
+            animation: blob 2s linear infinite;
+        }
+        .contact-input:focus{
+            outline: none;
+        }
+        @keyframes blob {
+            from{
+                rotate: 0deg;
+            }
+            to{
+                rotate: 360deg;
+            }
+        }
+        .menu-show{
+        top: 0px !important;
+        }
+
+        /* responsive */
+        @media (max-width:1440px){
+
+}
+
+@media (max-width:1024px){
+    /* hero */
+    .hero-section{
+        background-size: 150%;
+        background-repeat: no-repeat;
+        background-position: top -70px right -335px;
+    }
+    .hero-section .hero-header{
+        padding-top: 130px;
+    }
+    .scroll-down{
+        top: 47%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* contents */
+    .content-link-items:last-child,
+    .content-link-items:nth-child(5){
+        display: none;
+    }
+    /* achieve */
+    .achieve-section{
+        margin-top: 100px;
+    }
+    /* swiper */
+    .swiper-btn{
+        margin-top: 25px;
+    }
+}
+
+@media (max-width:768px){
+    /* hero */
+    .hero-section{
+        background-size: 200%;
+        background-repeat: no-repeat;
+        background-position: top -5px right -475px;
+    }
+    .hero-header{
+        padding-top: 180px !important;
+    }
+    .scroll-down{
+        display: none;
+    }
+    .tablet-scroll{
+        display: block !important;
+        z-index: 200;
+    }
+    .hero-description{
+        width: 500px !important;
+    }
+    /* contents */
+    .content-description{
+        width: 50% !important;
+    }
+    .content-links{
+        transform: none !important;
+    }
+    .content-link-items{
+        width: 250px;
+        height: 400px;
+    }
+    .content-link-items img{
+        width: 250px;
+        height: 250px;
+    }
+    .content-link-items a:has(span){
+        font-size: 12px;
+    }
+    .category-tags{
+        font-size: 8px;
+    }
+    .content-bg-circle{
+        width: 300px !important;
+        height: 300px !important;
+        left: -40%;
+        filter: blur(200px);
+    }
+    /* ach */
+    .achieve-section{
+        height: 75vh !important;
+        margin-top: 0px !important;
+    }
+    .achieve-section .ach-header{
+        font-size: 75px;
+    }
+    .achieve-section .ach-header + p{
+        font-size: 15px;
+    }
+    .swiper-btn{
+        margin-top: 60px;
+    }
+    /* contact */
+    .contact-header{
+        font-size: 40px !important;
+    }
+    .contact-description{
+        width: 75% !important;
+        font-size: 14px !important;
+    }
+    .contact-buttons a{
+        font-size: 13px !important;
+        padding: 7px 17px;
+    }   
+    .blob{
+        width: 200px;
+        height: 200px;   
+    }
+}
+
+@media (max-width:425px){
+    .nav-links,
+    .nav-socials{
+        display: none;
+    }
+    .mobile-nav{
+        display: block !important;
+    }
+    .mobile-menu{
+        display: block !important;
+        transition: all 0.5s ease;
+    }
+    .menu-web-links::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 5px; 
+        width: 100%;
+        height: 3px;
+        background-color: black;
+    }
+    
+    /* hero */
+    .hero-section{
+        background-size: 300%;
+        background-position: top 0px right -490px;
+    }
+    .hero-header p:first-child{
+        font-size: 13px !important;
+    }
+    .hero-header p:nth-child(2){
+        font-size: 30px !important;
+    }
+    .hero-header .hero-description{
+        font-size: 13px !important;
+        width: 325px !important;
+    }
+    .tablet-scroll{
+        display: none !important;
+    }
+    .mobile-scroll{
+        display: block !important;
+    }
+    .mobile-angle{
+        bottom: 15px !important;
+    }
+    /* content */
+    .content-section{
+        height: 100vh !important;
+    }
+    .content-description{
+        width: 80% !important;
+    }
+    .motto{
+        padding-left: 0px !important;
+    }
+    .content-scroll{   
+        /* border-radius: 50%; */
+        /* background-color: #00ccbd; */
+        /* box-shadow: 0px 0px 40px 10px #00ccbd; */
+        color: #00ccbd;
+        font-size: 15px;
+        z-index: 100;
+        display: block !important;
+        top: 82%;
+        left: 50%;
+        translate: -50% 0%;
+        animation: contentScroll 2s ease  infinite;
+    }
+    @keyframes contentScroll {
+        0%{
+            transform: translateX(-10px);
+        }
+        50%{
+            transform: translateX(0px);
+        }
+        100%{
+            transform: translateX(-10px);
+        }
+    }
+    .content-links{
+        display: none !important;
+    }
+    .content-swiper{
+        margin-top: 30px;
+        display: block !important;
+    }
+    .content-swiper-links{
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .content-swiper-links + a > span{
+        background-color: #00ccbd;
+        color: black;
+    }
+    .more-contents{
+        bottom: 50px;
+    }
+    .content-bg-circle{
+        width: 200px !important;
+        height: 200px !important;
+        top: 30%;
+        left: -30%;
+        filter: blur(150px);
+    }
+    /* ach */
+    .achieve-section{
+        flex-direction: column !important;
+        justify-content: space-around !important;
+        padding: 30px 0px;
+    }
+    /* our team */
+    .our-team{
+        height: 100vh !important;
+    }
+    .content-motto::after,
+    .team-motto::after{
+        font-size: 50px !important;
+        top: -100% !important;
+    }
+    .team-scroll{
+        top: 30% !important;
+    }
+    .swiper-btn{
+        display: none !important;
+    }
+    .team-circle{
+        width: 200px !important;
+        height: 200px !important;
+        top: 30% !important;
+        right: -50% !important;
+        filter: blur(150px) !important;
+    }
+    /* contact */
+    .contact-header{
+        font-size: 30px !important;
+    }
+    .contact-description{
+        font-size: 13px !important;
+    }
+    .contact-buttons{
+        padding: 0px 20px !important;
+    }
+    .contact-buttons a{
+        font-size: 12px !important;
+    }
+    /* footer */
+    footer{
+        padding: 30px 50px 100px 50px !important;
+    }
+    footer .logo{
+        display: none !important;
+    }
+    .footer-links{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between;
+        justify-content: center;
+        gap: 10px !important;
+    }
+    .footer-links p{
+        font-size: 13px !important;
+    }
+    .footer-links ul li a{
+        font-size: 12px !important;
+    }
+    .footer-socials{
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width:375px){
+    .hero-section{
+        background-position: top 0px right -435px; 
+    }
+    .content-motto::after,
+    .team-motto::after{
+        font-size: 40px !important;
+        top: -75% !important;
+    }
+    .content-description{
+        font-size: 13px !important;
+    }
+    .content-swiper-links + a{
+        font-size: 13px !important;
+        margin-top: 13px !important;
+    }
+    .content-scroll{
+        top: 75%;
+    }
+    .more-contents{
+        bottom: 10% !important;
+    }
+    .contact-section{
+        padding-top: 250px !important;
+    }
+    .contact-header{
+        font-size: 25px !important;
+    }
+    .contact-description{
+        font-size: 13px !important;
+    }
+    .contact-buttons{
+        padding: 0px 5px !important;
+        flex-direction: column !important;
+        justify-content: space-around !important;
+        gap: 0px !important;
+    }
+    .contact-buttons a{
+        font-size: 11px !important;
+    }
+    .blob{
+        width: 200px !important;
+        height: 200px !important;
+        filter: blur(75px) !important;
+        top: 60% !important;
+    }
+    .footer-links p{
+        font-size: 11px !important;
+    }
+    .footer-links ul li a{
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width:320px){
+    .mobile-menu-links{
+        font-size: 20px !important;
+    }
+    .menu-web-links::after{
+        bottom: 0px !important;
+        height: 2px !important;
+    }
+    .hero-section{
+        background-position: top 0px left -270px;
+    }
+    .hero-header p:first-child{
+        font-size: 10px !important;
+    }
+    .hero-header p:nth-child(2){
+        font-size: 20px !important;
+    }
+    .hero-header .hero-description{
+        font-size: 10px !important;
+        width: 300px !important;
+    }
+    .mobile-scroll{
+        top: 45% !important;
+    }
+    .made-with-love{
+        width: max-content;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <section class="hid navbar px-[50px] w-[100vw] flex justify-between items-center fixed z-[1000]">
+        <div class="logo w-[50px] h-[50px]">
+            <a href="#" class="w-[100%] h-[100%]">
+                <img src="imgs/Boosted New Logo.png" alt="Stay boosted!" class="w-[100%] h-[100%]">
+            </a>
+        </div>
+        <!-- nav links -->
+        <div class="nav-links text-[13px] text-white font-[50] ml-[100px]">
+            <ul class="flex gap-[50px]">
+                <li><a href="#contents" class="relative">Contents</a></li>
+                <li><a href="#ourTeam"  class="relative">Our team</a></li>
+                <li><a href="#contact"  class="relative">Contact</a></li>
+            </ul>
+        </div>
+        <!-- nav socials -->
+        <!-- <div class="nav-socials text-[20px] text-white">
+            <ul class="flex gap-[20px]">
+                <li><a href="https://www.facebook.com/boostedmedia.mm" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com/boostedmedia.mm"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com/boostedmedia.mm"><i class="fa-brands fa-x-twitter"></i></a></li>
+            </ul>
+        </div> -->
+        <div class="boosted-plus flex items-center gap-[20px] text-white text-[13px]">
+            <a href="profile-page.html" class="flex gap-[5px] items-center"><i class="fa-solid fa-user"></i>Thura</a>
+            <a href="Boosted+.html" class="bg-[--primary-color] rounded-[5px] px-[10px] py-[3px]">Boosted+</a>
+        </div>
+        <div class="hidden relaive z-[1000] mobile-nav text-white text-[20px]"><button id="mobileNavBars">
+            <i class="fa-solid fa-bars"></i>
+        </button></div>
+        <div id="mobileNav" class="mobile-menu w-[100vw] h-[100vh] bg-[--primary-color] absolute left-[0px] top-[-100vh]">
+            <div class="mobile-menu-links flex flex-col justify-between items-start px-[50px] py-[100px] h-[100%] text-[30px] font-semibold">
+                <div class="flex flex-col gap-[15px] ">
+                    <a href="#contents" id="menuContents" class="flex gap-[10px] items-center menu-web-links relative">Contents<i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#ourTeam" id="menuTeam" class="flex gap-[10px] items-center menu-web-links relative">Our Team<i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" id="menuContact" class="flex gap-[10px] items-center menu-web-links relative">Contact<i class="fa-solid fa-arrow-right"></i></a></div>
+                <div class="menu-socials text-[35px] text-black">
+                    <ul class="flex gap-[20px]">
+                        <li><a href="https://www.facebook.com/boostedmedia.mm" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a href="https://www.facebook.com/boostedmedia.mm"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/boostedmedia.mm"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- hero -->
+    <section class="hero-section w-[100vw] h-[100vh] relative text-white flex justify-center items-start text-center">
+        <div class="hid hero-header z-50 pt-[150px] flex flex-col">
+            <p class="text-[15px] leading-[1.2] text-slate-500 font-semibold">FOR ENTHUSIASTS</p>
+            <p class="text-[50px] leading-[1.2] mb-[10px] pb-[10px] font-semibold">BY ENTHUSIASTS</p>
+            <p class="hero-description text-[15px] leading-[1.5] w-[580px] text-slate-500">Boosted is an independent automotive media founded & created by an auto-enthusiast to contribute today's community in which most of the youths are lack of automotive knowledge. Boosted aims to be the one true automotive media that do not and will not be creating false news and brand-biased informations about the global automotive industry.</p>
+        </div>
+        <div class="hid scroll-down">
+            <div class="scroll-ball"></div>
+            <div class="scroll-angle"><i class="fa-solid fa-angle-down"></i></div>
+        </div>
+
+        <div class="hid hidden tablet-scroll absolute top-[55%] left-[50%] text-[--primary-color]">
+            <div class="tablet-icon text-[30px]"><i class="fa-solid fa-tablet-screen-button"></i></div>
+            <div class="tablet-angle scroll-angle bottom-[13px]">
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+
+        <div class="hid hidden mobile-scroll absolute top-[55%] left-[50%] text-[--primary-color]">
+            <div class="mobile-icon text-[30px]"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div class="mobile-angle scroll-angle bottom-[13px]">
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- contents -->
+    <section id="contents" class="content-section relative w-[100vw] h-[155vh] pt-[50px] bg-black text-white">
+        <div class="hid mx-[50px]">
+            <p class="content-motto motto relative z-50 pl-[100px] text-[15px] font-semibold">experience what is not mediocre.</p>
+        </div>
+        <div class="hid mx-[50px] content-description text-[15px] text-slate-500 w-[35%] mt-[25px]">
+            <p>Boosted Media offers "the best in the community" contents in which each of them are crafted with passion, love and more-than-enough-time. </p>
+        </div>
+        <div class="hid mx-[50px] hid-delay content-links mt-[50px] flex flex-wrap justify-between items-center text-[15px] text-center relative z-10">
+            <div class="content-link-items relative">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0eAb2kMzVLBKK5kmLdenE8qM1FPhkh9wBgx4RBEMUA8r3vmKfSMEFVDLgHi9CZqmhl?__cft__[0]=AZXv8o751BveaHegaeihWP5-HfGsA4aZCtVqbKI8Ejr_-iT_a6ZT00qv_ShXS4Vy_Y9uPvg58f3gHgX09m1sG1Sv_ytulmht5DIKb7r4St0gTrwRvT3wqm-NdXqADnlo47s6iSOBcMw2n-IOUFUhbShhchA2UCgOG71GP4UyVNuLHxIMQXBYW0n9r6E92kRYu1M&__tn__=%2CO%2CP-R" target="_blank" class="content-links-elements content-links-elements-0 absolute p-[5px] text-white flex gap-[5px] justify-center items-center z-50"><p>Read</p><i class="fa-solid fa-up-right-from-square"></i></a>
+                <img src="imgs/toyota century recap.jpeg" class="card-img-0 relative" id="card-img-0" alt="">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0eAb2kMzVLBKK5kmLdenE8qM1FPhkh9wBgx4RBEMUA8r3vmKfSMEFVDLgHi9CZqmhl?__cft__[0]=AZXv8o751BveaHegaeihWP5-HfGsA4aZCtVqbKI8Ejr_-iT_a6ZT00qv_ShXS4Vy_Y9uPvg58f3gHgX09m1sG1Sv_ytulmht5DIKb7r4St0gTrwRvT3wqm-NdXqADnlo47s6iSOBcMw2n-IOUFUhbShhchA2UCgOG71GP4UyVNuLHxIMQXBYW0n9r6E92kRYu1M&__tn__=%2CO%2CP-R" target="_blank">Toyota Century SUV <span>event recap</span></a>
+                <div class="line color-slate-500"></div>
+                <p class="category-tags">EVENT <br>RECAP</p>
+            </div>
+            <div class="content-link-items relative">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0GmrLhrSx8CacP2vAXwxr3YQpEdsKKTp7fj3UtLXrV5gyYfbPveB55tdPTBGjk2YFl?__cft__[0]=AZWC57Wc-gFIE-KQGIDmr3OG4Uvylw3tG8FlHAL-n2bIxB60xl8c3jvbc9ckzf_gvMYNnp-HK4EFEIAnOTgvCx8V_wvecDWdRvD7qsDw0SCIyi1M73VXpJH-gXkjekaEDe5NF2AUQDWT_cKQYTtM1Jxq7u7QXIQscZOLQP8P_KTb3ratm8wE-FjMWGGJyqEbyQTWLAdRmzCnwFpt62Z0YBEhyxH6WUmF67tgYYJn9LI4bQ&__tn__=%2CO%2CP-R" target="_blank" class="content-links-elements content-links-elements-1 absolute p-[5px] text-white flex gap-[5px] justify-center items-center z-50"><p>Read</p><i class="fa-solid fa-up-right-from-square"></i></a>
+                <img src="imgs/Hypercar era.jpeg" class="relative card-img-1" alt="">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0GmrLhrSx8CacP2vAXwxr3YQpEdsKKTp7fj3UtLXrV5gyYfbPveB55tdPTBGjk2YFl?__cft__[0]=AZWC57Wc-gFIE-KQGIDmr3OG4Uvylw3tG8FlHAL-n2bIxB60xl8c3jvbc9ckzf_gvMYNnp-HK4EFEIAnOTgvCx8V_wvecDWdRvD7qsDw0SCIyi1M73VXpJH-gXkjekaEDe5NF2AUQDWT_cKQYTtM1Jxq7u7QXIQscZOLQP8P_KTb3ratm8wE-FjMWGGJyqEbyQTWLAdRmzCnwFpt62Z0YBEhyxH6WUmF67tgYYJn9LI4bQ&__tn__=%2CO%2CP-R" target="_blank">Are We Already in <span>4-seated Supercars</span> Era?</a>
+                <div class="line"></div>
+                <p class="category-tags">CURIO <br>SITIES</p>
+            </div>
+            <div class="content-link-items relative">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0joftp7nPxdTaPDrXA2Vsr1VyeJeK8BnzhxKQWBYt339Emmoy1HUrrGYqcVWr6Ktfl?__cft__[0]=AZVLnsE2FqCp8Nnp6H3OO65-1agEQiMPJZ3PDiFjXOPmzi-fytPEM1TwbMlrKaXfRUKplJpz664NExMCRlPJ0QN-E9zVKdkC7YTIYGWvr_C5-ayeuvcrdTqvTVbH-0ZvONgY0ibp29sFtsAEcq1v8Xqz3IER1Ue8cvkY6vTPsScVzjQGhn6pYk2eRfZ9hwZWBWc&__tn__=%2CO%2CP-R" target="_blank" class="content-links-elements absolute p-[5px] text-white flex gap-[5px] justify-center items-center z-50"><p>Read</p><i class="fa-solid fa-up-right-from-square"></i></a>
+                <img src="imgs/Christian Von Koenigsegg.jpeg" class="relative content-img" alt="">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0joftp7nPxdTaPDrXA2Vsr1VyeJeK8BnzhxKQWBYt339Emmoy1HUrrGYqcVWr6Ktfl?__cft__[0]=AZVLnsE2FqCp8Nnp6H3OO65-1agEQiMPJZ3PDiFjXOPmzi-fytPEM1TwbMlrKaXfRUKplJpz664NExMCRlPJ0QN-E9zVKdkC7YTIYGWvr_C5-ayeuvcrdTqvTVbH-0ZvONgY0ibp29sFtsAEcq1v8Xqz3IER1Ue8cvkY6vTPsScVzjQGhn6pYk2eRfZ9hwZWBWc&__tn__=%2CO%2CP-R" target="_blank" ><i>"The Father Of Hypercars"</i><br><span>Christian Von Koenigsegg</span></a>
+                <div class="line"></div>
+                <p class="category-tags">REST IS <br>HISTORY</p>
+            </div>
+            <div class="content-link-items relative">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid02pSmJ1WC1sSCTMFh1Zzqd7C5qfDt17NqkA7bdHfWADi2E1czYA9JAtFfR2mDjM5zil?__cft__[0]=AZWm-xRzEVF-T7jrQJ463EtGgMhrmU0mZjGXEQIrCiUdgUNcWfeyg4xkVz_lQoyt5yGj2KUOTSC156akciaHIYGZHwBLZaF4vd4nD2qV_FOEHdU6LnTDJ-gSVXYMnCjODfwzLM66pYCeKzJG_NBzQ0rVCe3KJDNXh_Zlz4jRetXwRoqZIv-IRtZ7eGs8WPqjYoM&__tn__=%2CO%2CP-R" target="_blank" class="content-links-elements absolute p-[5px] text-white flex gap-[5px] justify-center items-center z-50"><p>Read</p><i class="fa-solid fa-up-right-from-square"></i></a>
+                <img src="imgs/Diablo.jpeg" class="relative" alt="">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid02pSmJ1WC1sSCTMFh1Zzqd7C5qfDt17NqkA7bdHfWADi2E1czYA9JAtFfR2mDjM5zil?__cft__[0]=AZWm-xRzEVF-T7jrQJ463EtGgMhrmU0mZjGXEQIrCiUdgUNcWfeyg4xkVz_lQoyt5yGj2KUOTSC156akciaHIYGZHwBLZaF4vd4nD2qV_FOEHdU6LnTDJ-gSVXYMnCjODfwzLM66pYCeKzJG_NBzQ0rVCe3KJDNXh_Zlz4jRetXwRoqZIv-IRtZ7eGs8WPqjYoM&__tn__=%2CO%2CP-R" target="_blank">lamborghini <span>ECCENTRIC</span></a>
+                <div class="line"></div>
+                <p class="category-tags">CURIO <br>SITIES</p>
+            </div>
+            <div class="content-link-items relative">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid02odUbFkPbtNut9woJvs11J9nGFzZPRHf9TJs7xy1PPANCx8TnwCxhRGc3DEgEX1Gol?__cft__[0]=AZVTGl9Tv5OE68I6kVQi2N-kWwLFo_gDh-ZwU3gqtoUnMOmBuK0sDtoCBZB48O64M0KdnkNNX3v8_bgw-PURKg7uFJvpyI8gfnfnDgcfrdoI3jbggPyV8rpKcV5xQ7DNoh_clQUZEAXfXFt-BTgVSSq4HTe3vyp32dvk3mkLGuY2YTZW8CtjZK4WmzwV2tlOpwU&__tn__=%2CO%2CP-R" target="_blank" class="content-links-elements absolute p-[5px] text-white flex gap-[5px] justify-center items-center z-50"><p>Read</p><i class="fa-solid fa-up-right-from-square"></i></a>
+                <img src="imgs/Offroad supercar trend.jpeg" class="relative" alt="">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid02odUbFkPbtNut9woJvs11J9nGFzZPRHf9TJs7xy1PPANCx8TnwCxhRGc3DEgEX1Gol?__cft__[0]=AZVTGl9Tv5OE68I6kVQi2N-kWwLFo_gDh-ZwU3gqtoUnMOmBuK0sDtoCBZB48O64M0KdnkNNX3v8_bgw-PURKg7uFJvpyI8gfnfnDgcfrdoI3jbggPyV8rpKcV5xQ7DNoh_clQUZEAXfXFt-BTgVSSq4HTe3vyp32dvk3mkLGuY2YTZW8CtjZK4WmzwV2tlOpwU&__tn__=%2CO%2CP-R" target="_blank"><span>Offroad Supercars</span> Trend</a>
+                <div class="line"></div>
+                <p class="category-tags">CURIO <br>SITIES</p>
+            </div>
+            <div class="content-link-items relative">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0iNLujUvMcVVyhvnTcrtWt28E6aZcSXgpBtfPoogfJsvh3Cprf3eF9SDY8FhpQH66l?__cft__[0]=AZUm9YRsNCXUPPJwo-mpUmtiVkiawFQH2Shmdf4qai1n-_MTGDRMXKSLolNaZY9x1a5FTv2iF74tdr0qIQLs3xHilq52q2YZiADyeW6IQkOEqOeVSmBIh1dpfr5gE1QH37G-KgD31QwRlrQ7oE6NtPlvbt5K_XossryqIpBQ3PvqjyXQ92ARkM31lwyYct0qqOo&__tn__=%2CO%2CP-R" target="_blank" class="content-links-elements absolute p-[5px] text-white flex gap-[5px] justify-center items-center z-50"><p>Read</p><i class="fa-solid fa-up-right-from-square"></i></a>
+                <img src="imgs/skyline and gtr.jpeg" class="relative" alt="">
+                <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0iNLujUvMcVVyhvnTcrtWt28E6aZcSXgpBtfPoogfJsvh3Cprf3eF9SDY8FhpQH66l?__cft__[0]=AZUm9YRsNCXUPPJwo-mpUmtiVkiawFQH2Shmdf4qai1n-_MTGDRMXKSLolNaZY9x1a5FTv2iF74tdr0qIQLs3xHilq52q2YZiADyeW6IQkOEqOeVSmBIh1dpfr5gE1QH37G-KgD31QwRlrQ7oE6NtPlvbt5K_XossryqIpBQ3PvqjyXQ92ARkM31lwyYct0qqOo&__tn__=%2CO%2CP-R" target="_blank">Why was Godzilla categoried into <br> <span>Skyline and GT-R</span></a>
+                <div class="line"></div>
+                <p class="category-tags">CURIO <br>SITIES</p>
+            </div>
+        </div>
+        <div class="more-contents absolute z-50 flex items-center justify-between py-[5px] px-[10px] text-[15px]"><a href="https://www.facebook.com/boostedmedia.mm" target="_blank">More Contents<i class="fa-solid fa-up-right-from-square pl-[10px]"></i></a></div>
+        <div class="content-bg-circle absolute w-[500px] h-[500px] bg-[--primary-color]"></div>
+
+        <!-- mobile contents -->
+        <div class="hidden content-scroll absolute">
+            <p><i class="fa-solid fa-chevron-left"></i>
+                Swipe
+            <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+        <div class="hidden content-swiper swiper relative px-[50px]">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex flex-col items-center">
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0eAb2kMzVLBKK5kmLdenE8qM1FPhkh9wBgx4RBEMUA8r3vmKfSMEFVDLgHi9CZqmhl?__cft__[0]=AZXv8o751BveaHegaeihWP5-HfGsA4aZCtVqbKI8Ejr_-iT_a6ZT00qv_ShXS4Vy_Y9uPvg58f3gHgX09m1sG1Sv_ytulmht5DIKb7r4St0gTrwRvT3wqm-NdXqADnlo47s6iSOBcMw2n-IOUFUhbShhchA2UCgOG71GP4UyVNuLHxIMQXBYW0n9r6E92kRYu1M&__tn__=%2CO%2CP-R" class="content-swiper-links" target="_blank">
+                    <img src="imgs/toyota century recap.jpeg" alt="">
+                    </a>
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0eAb2kMzVLBKK5kmLdenE8qM1FPhkh9wBgx4RBEMUA8r3vmKfSMEFVDLgHi9CZqmhl?__cft__[0]=AZXv8o751BveaHegaeihWP5-HfGsA4aZCtVqbKI8Ejr_-iT_a6ZT00qv_ShXS4Vy_Y9uPvg58f3gHgX09m1sG1Sv_ytulmht5DIKb7r4St0gTrwRvT3wqm-NdXqADnlo47s6iSOBcMw2n-IOUFUhbShhchA2UCgOG71GP4UyVNuLHxIMQXBYW0n9r6E92kRYu1M&__tn__=%2CO%2CP-R" class="mt-[10px]" target="_blank">Toyota Century <span>event recap</span></a>
+                    <div class="line"></div>
+                    <p class="category-tags">EVENT <br>RECAP</p>
+                </div>
+                <div class="swiper-slide flex flex-col items-center">
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0GmrLhrSx8CacP2vAXwxr3YQpEdsKKTp7fj3UtLXrV5gyYfbPveB55tdPTBGjk2YFl" class="content-swiper-links" target="_blank">
+                    <img src="imgs/Hypercar era.jpeg" alt="">
+                    </a>
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0GmrLhrSx8CacP2vAXwxr3YQpEdsKKTp7fj3UtLXrV5gyYfbPveB55tdPTBGjk2YFl" class="mt-[10px]" target="_blank">Are We Already In <span>Supercars' Era</span></a>
+                    <div class="line"></div>
+                    <p class="category-tags">CURIO <br>SITIES</p>
+                </div>
+                <div class="swiper-slide flex flex-col items-center">
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0joftp7nPxdTaPDrXA2Vsr1VyeJeK8BnzhxKQWBYt339Emmoy1HUrrGYqcVWr6Ktfl" class="content-swiper-links" target="_blank">
+                    <img src="imgs/Christian Von Koenigsegg.jpeg" alt="">
+                    </a>
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid0joftp7nPxdTaPDrXA2Vsr1VyeJeK8BnzhxKQWBYt339Emmoy1HUrrGYqcVWr6Ktfl" class="mt-[10px] text-center" target="_blank">"The Father Of Hypercars" <br> <span>Chirstian Von Koenigsegg</span></a>
+                    <div class="line"></div>
+                    <p class="category-tags">CURIO <br>SITIES</p>
+                </div>
+                <div class="swiper-slide flex flex-col items-center">
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid02pSmJ1WC1sSCTMFh1Zzqd7C5qfDt17NqkA7bdHfWADi2E1czYA9JAtFfR2mDjM5zil" class="content-swiper-links" target="_blank">
+                    <img src="imgs/Diablo.jpeg" alt="">
+                    </a>
+                    <a href="https://www.facebook.com/boostedmedia.mm/posts/pfbid02pSmJ1WC1sSCTMFh1Zzqd7C5qfDt17NqkA7bdHfWADi2E1czYA9JAtFfR2mDjM5zil" class="mt-[10px]" target="_blank">lamborghini <span>ECCENTRIC</span></a>
+                    <div class="line"></div>
+                    <p class="category-tags">CURIO <br>SITIES</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ach -->
+    <section class="achieve-section w-[100vw] h-[100vh] text-white px-[50px] flex justify-between items-center">
+        <div class="hid followers relative z-10 flex flex-col items-center">
+            <p class="ach-header text-[100px] font-bold text-[--primary-color] leading-[0.9]">20K+</p>
+            <p class="font-semibold">Followers</p>
+        </div>
+        <div class="hid delay-[300ms] contents-ach relative z-10 flex flex-col items-center">
+            <p class="ach-header text-[100px] font-bold text-[--primary-color] leading-[0.9]">100+</p>
+            <p class="font-semibold ">Articles</p>
+        </div>
+        <div class="hid delay-[600ms] engagments relative z-10 flex flex-col items-center">
+            <p class="ach-header text-[100px] font-bold text-[--primary-color] leading-[0.9]">300+</p>
+            <p class="font-semibold">Average Engagments</p>
+        </div>
+    </section>
+
+    <!-- our team -->
+    <section id="ourTeam" class="our-team w-[100vw] h-[80vh] bg-black pt-[50px] relative">
+        <div class="our-team-motto">
+            <p class="hid team-motto motto relative z-50 pl-[100px] text-[15px] text-white font-semibold mx-[50px]">meet the creators.</p>
+        </div>
+        <div class="content-description text-[15px] text-slate-500 w-[35%] mt-[25px] mx-[50px] relative z-50">
+            <p class="hid">Contents on Boosted Media, their visuals and the operations behind it are done by just one person, Arkar but in this section, his younger brother(me) will be displayed for his class project sake.</p>
+        </div>
+        <!-- swiper -->
+        <div class="hid delay-[300ms] swiper mySwiper relative mt-[20px] w-[100%] h-[100%] p-[50px] z-50">
+            <div class="swiper-wrapper w-[100%]">
+                <div class="swiper-slide">
+                    <div class="arkar text-white flex items-center">
+                        <img src="Profiles/Arkar.png" alt="Arkar Pyae Sone" class="w-[100px] h-[100px] ">
+                        <p class="mr-[10px]">Arkar <span class="bg-[--primary-color] text-black px-[5px]">Kuro</span> Pyae Sone</p>
+                        <a href="https://www.facebook.com/profile.php?id=100068654507084" target="_blank" class="text-[25px] text-slate-500"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <div class="profile-description text-slate-500 text-[13px] mt-[20px]">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ducimus itaque ratione, cumque, voluptatibus quod suscipit modi animi atque asperiores illum ipsum a libero cum nisi dignissimos blanditiis error harum? Similique enim perferendis veniam facere ea quas asperiores quis, distinctio aliquam magnam eos! Totam fugiat neque corrupti doloremque, porro error?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio aliquid animi nisi. Sed quaerat, commodi totam enim tempora nemo impedit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, velit sit sint tenetur dolorem facilis repellendus iusto vitae voluptatem mollitia, nam praesentium labore non soluta? Excepturi facilis eum quae sint laudantium ea aliquam corrupti hic incidunt quia, deserunt odio sapiente repellat illo recusandae pariatur placeat fugiat amet ipsa! Nobis, hic.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="arkar text-white flex items-center">
+                        <img src="Profiles/Thura.png" alt="Thura Pyae Sone" class="w-[100px] h-[100px] ">
+                        <p class="mr-[10px]">Thura <span class="bg-[--primary-color] text-black px-[5px]">Chocoshimi</span> Pyae Sone</p>
+                        <a href="https://www.facebook.com/thura1092004/" target="_blank" class="text-[25px] text-slate-500 mr-[10px]"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/chocoshimi/" target="_blank" class="text-[25px] text-slate-500"><i class="fa-brands fa-instagram"> </i></a>
+                    </div>
+                    <div class="profile-description text-slate-500 text-[13px] mt-[20px]">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ducimus itaque ratione, cumque, voluptatibus quod suscipit modi animi atque asperiores illum ipsum a libero cum nisi dignissimos blanditiis error harum? Similique enim perferendis veniam facere ea quas asperiores quis, distinctio aliquam magnam eos! Totam fugiat neque corrupti doloremque, porro error?
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, dolores suscipit dicta libero repudiandae quisquam ad voluptatum molestiae nostrum consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias praesentium, nihil dignissimos illo explicabo sequi expedita unde cumque blanditiis qui, eaque harum exercitationem perferendis cum fuga asperiores ipsam sed nemo totam hic earum in aut. Molestias, debitis incidunt perspiciatis ad consequuntur, ipsa minus dicta aperiam est eum quas ipsum. Doloribus?
+                    </div>
+                </div>
+            </div>
+            <div id="NextSlideBtn" class="swiper-buttons-nx swiper-btn absolute flex items-center justify-center"><i class="fa-solid fa-angle-right text-[--primary-color]"></i></div>
+            <div id="PrevSlideBtn" class="swiper-buttons-prv swiper-btn absolute flex items-center justify-center"><i class="fa-solid fa-angle-left text-[--primary-color]"></i></div>
+        </div>
+        <div class="hidden content-scroll team-scroll absolute">
+            <p><i class="fa-solid fa-chevron-left"></i>
+                Swipe
+            <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+        <div class="team-circle absolute z-[0]"></div>
+    </section>
+
+    <!-- contact -->
+    <!-- <section id="contact" class="contact-section w-[100vw] h-[75vh] bg-black relative pt-[200px] px-[50px]">
+        <div>
+            <p class="contact-motto relative z-50 pl-[100px] text-[15px] text-white font-semibold">tune in on our contents.</p>
+        </div>
+        <div class="text-slate-500 mt-[50px]">
+            <p class="text-[15px]">Want to advertise on our contents? Want to request a content that covers the history of any car/ brand you want to know about? or simply want to say hi? Boosted Media accepts, reads and appreciates any message in our direct message inboxes. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero fugit earum natus minima eos necessitatibus alias ut voluptatum ullam velit. </p>
+        </div>
+        <div class="contact-links flex flex-row justify-start items-center gap-[20px]">
+            <a href="#" class="text-white">Message via Messenger<i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="#" class="text-white">Send an Email<i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </section> -->
+    <section id="contact" class="relative contact-section w-[100vw] h-[100vh] text-white text-center flex flex-col items-center gap-[20px] pt-[150px]">
+        <div class="hid contact-header text-[50px] font-semibold relative z-50">
+            <p><span class="strengthen text-black">Strengthen</span> Your</p>
+            <p>Automotive Knowledge</p>
+        </div>
+        <div class="contact-description w-[600px] z-50 text-slate-500">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In necessitatibus labore nam ab, soluta velit cupiditate nostrum molestiae perferendis vitae. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae atque eligendi, ratione molestias esse nemo? Repellendus perspiciatis ad consectetur magnam et neque? Sapiente beatae magnam assumenda corrupti doloribus quos maxime.</p>
+        </div>
+        <div class="hid contact-form z-50 flex mt-[10px]">
+            <input placeholder="Enter your email..." type="text" name="" id="#" class="contact-input w-[300px] p-[10px] bg-transparent text-white border-[2px] border-[--primary-color]">
+            <button class="text-white bg-[--primary-color] px-[8px]">Subscribe</button>
+        </div>
+        <!-- <div class="hid contact-description w-[50%] text-slate-500 relative z-50">
+            <p class="text-slate-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, voluptas voluptatum corrupti dolor saepe cupiditate quam, sed eveniet ducimus quas possimus temporibus dignissimos magnam molestiae sequi excepturi placeat nam ipsa fuga minus? Nulla pariatur provident eum iure quos harum, optio laborum tenetur facere, consequatur beatae qui incidunt corporis commodi voluptatibus.</p>
+        </div>
+        <div class="hid contact-buttons flex gap-[20px] relative z-50">
+            <a href="https://www.facebook.com/boostedmedia.mm" target="_blank" class="flex gap-[5px] items-center text-[--primary-color]">Contact Boosted Media<i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="https://www.facebook.com/boostedmedia.mm" target="_blank" class="flex gap-[5px] items-center bg-[--primary-color] text-black">Start Reading Now<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div> -->
+        <div id="blob" class="blob absolute z-10"></div>
+    </section>
+
+    <!-- footer -->
+    <footer class="w-[100vw] bg-[--primary-color] px-[100px] py-[40px] pb-[70px] relative">
+        <div class="flex justify-between items-center text-[13px]">
+            <div class="logo w-[100px] h-[100px]">
+                <a href="#" class="w-[100%] h-[100%]">
+                    <img src="imgs/Boosted New Logo.png" alt="Stay boosted!" class="w-[100%] h-[100%]">
+                </a>
+            </div>
+            <div class="footer-links self-start">
+                <p class="font-semibold text-[15px] pb-[5px]">Contents</p>
+                <ul>
+                    <li><a href="#">About Supercars</a></li>
+                    <li><a href="#">Nissan GT-R</a></li>
+                    <li><a href="#">Lamborghini</a></li>
+                </ul>
+            </div>
+            <div class="footer-links self-start">
+                <p class="font-semibold text-[15px] pb-[5px]">Our Team</p>
+                <ul>
+                    <li><a href="#">Email Kuro</a></li>
+                    <li><a href="#">Email Chocoshimi</a></li>
+                </ul>
+            </div>
+            <div class="footer-links self-start">
+                <p class="font-semibold text-[15px] pb-[5px]">Contact</p>
+                <ul>
+                    <li><a href="#">Messenger</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-socials flex gap-[20px]">
+            <a href="https://www.facebook.com/boostedmedia.mm"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://www.facebook.com/boostedmedia.mm"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/boostedmedia.mm"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="made-with-love text-[10px]">
+            <p class="mx-auto">Made with <i class="fa-solid fa-heart"></i> Class Final Project.</p>
+        </div>
+    </footer>
+
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("shw");
+                }
+                else { 
+                    entry.target.classList.remove("shw");
+                };
+            });
+        });
+
+        let hiddenElements = document.querySelectorAll(".hid");
+        hiddenElements.forEach((el) => observer.observe(el));
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 100,
+            loop: true,
+            allowTouchMove: true,
+        });
+        let profileSwiper = document.querySelector(".mySwiper").swiper;
+        let swiperNext = document.getElementById("NextSlideBtn");
+        swiperNext.addEventListener('click',function(){
+            profileSwiper.slideNext();
+        })
+        let swiperPrev = document.getElementById("PrevSlideBtn")
+        swiperPrev.addEventListener('click', function(){
+            profileSwiper.slidePrev();
+        })
+        var contentSwiper = new Swiper(".content-swiper", {
+            slidesPerView: 1,
+            spaceBetween: 100,
+            loop: true,
+            allowTouchMove: true,
+        });
+        let contentSwiperElement = document.querySelector(".content-swiper").contentSwiper;
+        // const blob = document.getElementById('blob');
+        // document.body.onpointermove = event => {
+        //     const { clientX,clientY } = event;
+        // blob.style.left = `${clientX}px`;
+        // blob.style.top = `${clientY}px`;
+        // }
+        const menuToggle = document.getElementById("mobileNavBars");
+        const mobileMenu = document.getElementById("mobileNav");
+        menuToggle.addEventListener("click", function(){
+            mobileMenu.classList.toggle("menu-show");
+            menuToggle.classList.toggle("text-black");
+        });
+        const menuContentsBtn = document.getElementById("menuContents");
+        menuContentsBtn.addEventListener("click",function(){
+            mobileMenu.classList.remove("menu-show");
+            menuToggle.classList.toggle("text-black");
+        });
+        const menuTeamBtn = document.getElementById("menuTeam");
+        menuTeamBtn.addEventListener("click",function(){
+            mobileMenu.classList.remove("menu-show");
+            menuToggle.classList.toggle("text-black");
+        });
+        const menuContactBtn = document.getElementById("menuContact");
+        menuContactBtn.addEventListener("click",function(){
+            mobileMenu.classList.remove("menu-show");
+            menuToggle.classList.toggle("text-black");
+        });
+      </script>
+</body>
+</html>
